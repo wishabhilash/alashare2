@@ -1,0 +1,56 @@
+<?php include('base.php') ?>
+
+
+<?php startblock('links') ?>
+	<link type="text/css" rel="stylesheet" href="../media/css/login.css">
+<?php endblock() ?>
+
+
+
+<?php startblock('body') ?>
+
+<div id="id_signup_block">
+	<form action="" method="post">
+		<table summary="signup" >
+			<tr>
+				<td>Name:</td><td><input type="text" maxlength="200" name="name_signup" /></td>
+			</tr>
+			<tr>
+				<td>Username:</td><td><input type="text" maxlength="200" name="username_signup" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td><td><input type="password" maxlength="200" name="password_signup" /></td>
+			</tr>
+			<tr>
+				<td>Confirm password:</td><td><input type="text" maxlength="200" name="repassword_signup" /></td>
+			</tr>
+			<tr>
+				<td>E-mail:</td><td><input type="text" maxlength="200" name="e-mail_signup" /></td>
+			</tr>
+			<tr colspan="2">
+				<td><input type="text" maxlength="200" name="submit_signup" /></td>
+			</tr>
+			
+		</table>
+	</form>
+</div>
+
+<div id="id_vertical_ruler"></div>
+
+<div id="id_signin_block">
+	<form action="" method="post">
+		<table summary="signin_table">
+			<tr>
+				<td>Username:</td><td><input type="text" maxlength="200" name="username_login" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td><td><input type="password" maxlength="200" name="password_login" /></td>
+			</tr>
+			<tr colspan="2">
+				<td><input type="submit" value="Submit" name="submit_login"</td>
+			</tr>
+		</table>
+	</form>
+</div>
+	
+<?php endblock() ?>

@@ -1,0 +1,15 @@
+#id_vertical_ruler
+{
+	width: 1px;
+	height: 50px;
+}
+
+#id_signup_block
+{
+	float: left;
+}
+
+#id_signin_block
+{
+	float: left;
+}

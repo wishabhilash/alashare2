@@ -1,0 +1,12 @@
+#id-update-profile { -webkit-border-radius:5px; border-radius:5px; -moz-border-radius:5px; -khtml-border-radius:5px;}
+#id-update-profile { background: #2D6091; width:350px; margin-left:315px;}
+
+form { font-size:16px; }
+#id-update-input { cursor:pointer; }
+#id-top-gap { height:40px; }
+#profile-pic img { height:100px; background-color: rgba(255,255,255,10); padding:10px; -webkit-border-radius:5px; border-radius:5px; -moz-border-radius:5px; -khtml-border-radius:5px;}
+#id-upload-bar { margin-left:305px; }
+.errorlist { font-size:12px; color:#ADD8E6; text-align:center;}
+label { font-size:16px; color:#ADD8E6;}
+
+#id-data-meter {visibility:hidden; }

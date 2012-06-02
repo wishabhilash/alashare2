@@ -1,0 +1,18 @@
+<?php
+
+function get_session($data)
+{
+	$data = hash('sha256', $data);
+	if(isset($_SESSION[$data]))
+		return $_SESSION[$data];
+	else
+		return ""; 
+}
+
+function get_post($data)
+{
+	if(isset($_POST[$data])) return $POST[$data];
+	else return "";
+}
+
+?>

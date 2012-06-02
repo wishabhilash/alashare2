@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+#id_wrapper
+{
+	width: 980px;
+	margin: auto;
+}
+
+li
+{
+	list-style-type: none;
+}
+
+#id_tab_home
+{
+	float:left;
+}
+
+.tab
+{
+	width:50px;
+	height:30px;
+	border:2px;
+	border-color: #fff;
+	background-color:#41B5C6;
+	padding: 0 2px 0 2px;
+	display: block;
+}
+
+.tab_content
+{
+	height:200px;
+}

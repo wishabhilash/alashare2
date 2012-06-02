@@ -1,0 +1,133 @@
+@Author: Abhilash Nanda
+@Project: A website for easy file trasaction.
+@Technologies used:
+	1. PHP
+	2. MySQL
+	3. Jquery
+	4. ajax
+	
+
+##########	PROJECT FILE HIERARCHEY	AND CONCISE DETAIL	###############
+docroot
+	|
+	|--- .htaccess (rewrites url)
+	|
+	|--- settings.php (configuration settings)
+	|
+	|--- index.php (manages urls)
+	|
+	|--- views
+	|		|--- views.php (manages logic)
+	|
+	|--- templates
+	|		|--- _404.php					(displays 404 error)
+	|		|--- base.php					(base template)
+	|		|--- login.php					(inherits base.php, login template)
+	|		|--- home.php					(inherits base.php, home of user)
+	|		|--- status_confirmed.php		(shows if user is activated)
+	|		|--- status_unconfirmed.php		(shows if user is not activated)
+	|		|--- register_profile.php		(asks profile info on first login)
+	|		|--- edit_profile.php			(lets user change its personal information)
+	|
+	|
+	|--- scripts
+	|		|--- file_upload.php 			(script to upload file to user upload directory)
+	|		|--- mail_script.php 			(script to send mail of confirmation using Pear mail)
+	|		
+	|--- media
+	|		|--- ajax_scripts
+	|		|		|--- fetch_files_db.php 		(fetches users files)
+	|		|		|--- fetch_files_shared 		(fetches files shared with user)
+	|		|		|--- fetch_users 				(fetchs all user info except the session owner)
+	|		|		|--- share_dialog_content.php 	(returns user list for share dialog)
+	|		|		|--- share_data.php				(shares data with user)
+	|		|		|--- unshare_data.php			(unshare data with user)
+	|       | 		|--- delete_file.php			(deletes an uploaded file)
+	|		|
+	|		|---   css
+	|		|		|--- base.css		(for base.php)
+	|		|		|--- demos.css		(needed for jQuery UI)
+	|		|		|--- home.css		(for home.php)
+	|		|		|--- login.css		(for login.php)
+	|		|		
+	|		|--- images		(various required images)
+	|		|
+	|		|--- js (all javascript, consists of jQuery and jQueryUI js's)
+	|
+	|
+	|---   lib
+	|		|--- database.php 		(connects to database)
+	|		|--- sessions.php		(user defined functions needed in session)
+	|       |--- ti.php				(enables template inheritance in php; refer: www.phpti.com)
+	|		|--- url_mapper.php		(maps urls in index.php to functions in views.php)
+	|		|--- validataions.php	(handles validations)
+	|
+	|
+	|--- accounts		(holds upload directories of all users)
+
+
+############	HOW TO CODE		#########
+
+**The database must be setup initially.
+**All required fields in settings.php must be passed a value.
+
+**This implementation tried to follow MVC architecture as close as possible, in this case VC, rather TV(template-view).
+The logic implemented is almost completely separated from the template.
+
+To start with, it has three important components:
+1. urls:
+		The url is a regex pattern along with a string which must be the name of a function in views.php inside an array.
+		
+		Ex: array("^\/$APP_NAME\/login$",'login') - consider $APP_NAME = 'php' then the url 
+				
+				/php/login --> login		(login function in view is executed)
+
+2. view (known as controller):
+		This holds all the logic that must decide which template to be displayed.
+
+3. template (known as view):
+		These are the actual webpages that are shown to the users. These are handled by the view files.
+		
+
+
+###########		HOW TO CODE TEMPLATES		##############
+
+Templates reside in the directory "templates".
+Here we make use of a special third party library called "ti.php" that enables us to inherit templates just like inheriting a class.
+"ti.php" provides us with blocks which must be defined on a base skeleton page. Rest of the page can then inherit this base page and start filling the blocks.
+Example:
+
+		base.php
+			<?php include('ti.php') ?>
+			<head>
+				<title><?php startblock('title') ?>Base page<?php endblock() ?></title>
+			</head>
+
+
+		test.php
+			<?php include('base.php') ?>
+			<?php startblock('title') ?> This is a test <?php endblock() ?>
+
+Output of base.php:
+		Base page (in title bar of browser)
+
+Output of test.php:
+		This is a test (in title bar of browser)
+
+
+************ For more infomation visit: www.phpti.com	***************
+
+
+
+############	OTHER INFOS		############
+
+** The project must be started by filling the default requirements found in settings.php
+
+** The "lib" directory contains library modules for trivial tasks like:
+	1. Form validation
+	2. database connection
+	3. Useful functions in sessions.php
+	4. ti.php
+	5. url_mapper (this library is used by index.php to map the urls)
+
+** The static media contents i.e. css, javascript, images and ajax helper scripts must be put in their respective directories, which can be found in "media".

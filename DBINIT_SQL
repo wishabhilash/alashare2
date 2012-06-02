@@ -1,0 +1,82 @@
+
+###########		CREATE AND USE DATABASE miniproject		###########
+
+CREATE DATABASE miniproject;
+USE miniproject;
+
+
+
+
+###########		CREATE TABLE user (user login info)	############
+
+CREATE TABLE user (
+	id INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR(200) NOT NULL,
+	password VARCHAR(200) NOT NULL,
+	email VARCHAR(200) NOT NULL,
+	activation_id VARCHAR(200) DEFAULT NULL,
+	activated INT DEFAULT NULL,
+	PRIMARY KEY (id)
+	)ENGINE=InnoDB;
+
+
+
+
+
+
+###########		CREATE TABLE user_profile (user personal data table)	############
+
+CREATE TABLE user_profile (
+	id INT DEFAULT NULL,
+	first_name VARCHAR(200) DEFAULT NULL,
+	last_name VARCHAR(200) DEFAULT NULL,
+	phone BIGINT DEFAULT NULL,
+	address VARCHAR(200) DEFAULT NULL,
+	city VARCHAR(100) DEFAULT NULL,
+	state VARCHAR(100) DEFAULT NULL,
+	quota INT DEFAULT NULL
+	)ENGINE=InnoDB;
+	
+ALTER TABLE user_profile ADD CONSTRAINT
+	fk_user FOREIGN KEY(id) REFERENCES user(id)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE;
+
+
+
+
+
+
+
+###########		CREATE TABLE uploaded_data (upload data info table)	############
+CREATE TABLE uploaded_data (
+	id INT NOT NULL AUTO_INCREMENT,
+	fid INT DEFAULT NULL,
+	data_addr VARCHAR(300) DEFAULT NULL,
+	file_name VARCHAR(300) DEFAULT NULL,
+	PRIMARY KEY (id))ENGINE=InnoDB;
+	
+ALTER TABLE uploaded_data ADD CONSTRAINT
+	fk_upload FOREIGN KEY(fid) REFERENCES user(id)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE;
+
+
+
+
+
+
+###########		CREATE TABLE share_info (data sharing table)	############
+
+CREATE TABLE share_info (
+	id INT NOT NULL AUTO_INCREMENT, 
+	uid INT DEFAULT NULL, 
+	did int DEFAULT NULL, 
+	PRIMARY KEY (id)
+	)ENGINE=InnoDB;
+
+ALTER TABLE share_info ADD CONSTRAINT
+	fk_uid FOREIGN KEY(uid) REFERENCES user(id),
+	fk_did FOREIGN KEY(did) REFERENCES uploaded_data(id)
+	ON UPDATE CASCADE
+	ON DELETE CASCADE;

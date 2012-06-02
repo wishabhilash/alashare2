@@ -1,0 +1,75 @@
+#id_logo { float:left;}
+#id_logo img { height:100px;}
+
+#feedback { font-size: 1.4em; }
+#selectable, #dialog-selectable { list-style-type: none; margin: 0; padding: 0; float: left;}
+#selectable li, #dialog-selectable li { margin: 3px; padding: 1px; font-size: 4em; text-align: center;}
+#shared-data-list, #selectable li a, #selectable li, #dialog-selectable li, #data-list {  width: 120px; height: 100px; }
+
+#id_user_data { height:400px; overflow:auto;}
+#id_user_area, #id_user_shared { height:461px; overflow:auto;}
+
+/*		DIALOG		*/
+#dialog-selectable li {  width: 80px; height: 60px; margin: 3px; font-size: 0px; text-align: center;}
+#dialog-selectable li #name { font-size:12px;}
+#dialog-selectable li img { height: 30px; }
+.dialog-selectable-selected { background: url(../images/header.png); border:1px solid #52b4cd;}
+#dialog-shared { position:absolute; margin:-4px 0 0 0; width:12px; height:12px;}
+
+
+/*.dialog-selected-img { */
+
+
+/*		CSS: FILES AND DIRECTORY TILES			*/
+#data-list, #shared-data-list { float: left; margin:3px;}
+#data-list-options a img, #shared-data-list-options a img, .cursor-pointer , #dialog-selectable, #id-submit { cursor:pointer; }
+#data-list-name, #shared-data-list-name { font-size:13px; text-align: center; float: left; width:120px;}
+#data-list-pic img, #shared-data-list-pic img { width:40px; margin: 10px 0 0 40px;}
+#data-list-size, #shared-data-list-size {position:absolute; margin: -30px 0 0 0; text-align: center; width:120px; font-weight:bold;}
+.size-color-white { color:#fff; };
+#id_size{ width:300px; position:relative; text-align:right; margin-left:200px;}
+#id_tile{ height:50px;}
+.optionHide{ visibility:hidden; }
+.optionShow{ visibility:visible; }
+
+/*		TILES		*/
+#data-list-options{ position:absolute; margin: 20px 0 0 20px; width:82px;}
+#shared-data-list-options { position:absolute; margin: 20px 0 0 50px; width:82px;}
+#data-list-options a img, #shared-data-list-options a img { height:20px; padding:0 5px 0 0;}
+
+
+/*		TOP STATIC LINK BAR		*/
+#id-static-links { position:absolute; height:20px; background:#fff; margin:0 0 0 700px; opacity:0.7;}
+#id-static-links:hover { opacity:1;}
+#id-static-links span{ padding:5px;}
+#id-static-links #id-welcome-text{ color:#fff; background:#000; font-weight:bold; text-shadow:0 1px 1px #666;}
+#id-static-links a {font-size:12px; font-weight:bold; color:#52b4cd; text-decoration:none; text-shadow:0 1px 1px #666;}
+
+
+
+/*		FILE INPUT		*/
+#id-upload-bar { height:60px; width: 370px; border:1px dotted #9E9E9E; border-style:none none dotted; }
+#id-text-input {  border-radius:5px; box-shadow:inset 0 2px 2px #9E9E9E; border:1px solid #EDEDED; height:30px; width:250px;}
+#id-file-input { position:absolute; z-index:2; opacity:0; height:30px; margin-left:px; width:250px; cursor:text;}
+#id-submit { margin:0px 0 0 10px; height:30px; width:100px; background:url(../images/header.png) repeat-x; border:none; border-radius:5px; color:#fff; font-weight:bold;}
+#upload-div { margin:0 0 0 305px; }
+
+
+/*		COMMON RADIUS		*/
+#id-static-links { 
+	border-radius:0 0 5px 5px; 
+	-mox-border-radius:0 0 5px 5px; 
+	-webkit-border-radius:0 0 5px 5px;
+	-khtml-border-radius:0 0 5px 5px;
+}
+
+#id-static-links #id-welcome-text { 
+	border-radius:0 0 0 5px; 
+	-mox-border-radius:0 0 0 5px; 
+	-webkit-border-radius:0 0 0 5px;
+	-khtml-border-radius:0 0 0 5px;
+}
+
+
+#id-no-files-message { font-size:25px; color:#BFBFBF; text-align:center; vertical-align:text-bottom;}
+

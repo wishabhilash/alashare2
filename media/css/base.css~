@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body
+{
+	background: url(/var/www/php/images/header.png) no-repeat;
+}
+
+#id_wrapper
+{
+	width: 100%;
+}
